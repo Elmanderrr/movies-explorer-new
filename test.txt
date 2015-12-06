@@ -1,0 +1,4 @@
+[10:01:05] Requiring external module babel-core/register
+[10:01:08] Using gulpfile /var/www/personal/gulp-es6-syntex-boilerplate/gulpfile.babel.js
+[10:01:08] Task 'test' is not in your gulpfile
+[10:01:08] Please check the documentation for proper gulpfile formatting
