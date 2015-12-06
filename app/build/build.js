@@ -150,6 +150,7 @@ var Controller = (function () {
         value: function loadTemplate(tpl) {
             var _this = this;
 
+            //TODO make getMovie call abstract
             this.getMovies().then(function (data) {
                 _this.View.renderTemplate(tpl, data);
             });
@@ -225,19 +226,20 @@ var Router = (function () {
     _createClass(Router, [{
         key: 'listen',
         value: function listen() {
+            var _this = this;
+
             this.router({
 
                 '': function _() {
-                    console.log('root');
+                    _this.Controller.loadTemplate('root');
                 },
 
-                'movie-list': (function () {
-                    this.Controller.loadTemplate('movieList');
-                    console.log('movie-list');
-                }).bind(this),
+                'movie-list': function movieList() {
+                    _this.Controller.loadTemplate('movieList');
+                },
 
-                'test2': function test2() {
-                    console.log('popup 2 alert');
+                'menu-item': function menuItem() {
+                    _this.Controller.loadTemplate('menuItem');
                 }
 
             });
@@ -274,17 +276,27 @@ var View = (function () {
     function View() {
         _classCallCheck(this, View);
 
+        this.$root = $('[router-container]');
         this.templates = _templates2.default;
     }
 
     _createClass(View, [{
         key: 'renderTemplate',
         value: function renderTemplate(template, data) {
+            var _this = this;
+
+            console.log(this);
+            // TODO able to set html template from api, not only ajax request tpls...
             return this.templates.get(template).then(function (tpl) {
                 return _mustache2.default.render(tpl, { list: data });
             }).then(function (rendered) {
-                $('body').append(rendered);
+                _this.append(rendered);
             });
+        }
+    }, {
+        key: 'append',
+        value: function append(html) {
+            this.$root.html(html);
         }
     }]);
 
@@ -299,12 +311,38 @@ exports.default = View;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var _basedir = './view/templates';
 var templates = {
     _list: {
-        movieList: './view/templates/movie-list.html'
+        movieList: {
+            url: _basedir + '/movie-list.html'
+        },
+        menuItem: {
+            url: _basedir + '/menu-item.html'
+        },
+        root: {
+            template: _basedir + '/root.html'
+        }
     },
+
+    /**
+     *
+     * @param tpl
+     * @returns {*}
+     */
     get: function get(tpl) {
-        return $.get(this._list[tpl]);
+        var dfd = jQuery.Deferred();
+        var template = undefined;
+
+        if (this._list[tpl].url) {
+            template = $.get(this._list[tpl].url);
+        }
+
+        if (this._list[tpl].template) {
+            template = dfd.resolve(this._list[tpl].template);
+        }
+
+        return template;
     }
 };
 

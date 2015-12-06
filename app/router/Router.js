@@ -8,17 +8,16 @@ class Router {
     listen () {
         this.router({
 
-            '': function() {
-                console.log('root');
+            '': () => {
+                this.Controller.loadTemplate('root')
             },
 
-            'movie-list': function() {
+            'movie-list': () => {
                 this.Controller.loadTemplate('movieList')
-                console.log('movie-list');
-            }.bind(this),
+            },
 
-            'test2': function() {
-                console.log('popup 2 alert');
+            'menu-item': () => {
+                this.Controller.loadTemplate('menuItem')
             }
 
         })

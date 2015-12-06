@@ -48,6 +48,7 @@ class Controller {
 
     loadTemplate (tpl) {
 
+        //TODO make getMovie call abstract
         this.getMovies()
             .then(data => {
                 this.View.renderTemplate(tpl,data)
