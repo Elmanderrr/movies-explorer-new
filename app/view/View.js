@@ -9,8 +9,6 @@ class View {
     }
 
     renderTemplate (template, data) {
-        console.log(this)
-        // TODO able to set html template from api, not only ajax request tpls...
         return this.templates.get(template)
                 .then( tpl => {
                     return Mustache.render(tpl,{list:data})

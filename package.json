@@ -13,6 +13,7 @@
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
     "jquery": "^2.1.4",
+    "jspm": "^0.16.15",
     "require-dir": "^0.3.0",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
@@ -21,5 +22,18 @@
   },
   "dependencies": {
     "mustache": "^2.2.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "jquery": "github:components/jquery@^2.1.4",
+      "materialize": "npm:materialize@^1.0.0",
+      "mustache": "github:janl/mustache.js@^2.2.0",
+      "underscore": "npm:underscore@^1.8.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }

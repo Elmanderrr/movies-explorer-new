@@ -5,7 +5,6 @@ import helpers from './../helpers/helpers'
 class Controller {
     constructor (View) {
         this.View = View;
-
         this._init()
     }
 
@@ -46,13 +45,9 @@ class Controller {
     }
 
 
-    loadTemplate (tpl) {
+    loadTemplate (tpl,data) {
 
-        //TODO make getMovie call abstract
-        this.getMovies()
-            .then(data => {
-                this.View.renderTemplate(tpl,data)
-            })
+        this.View.renderTemplate(tpl,data)
 
     }
     

@@ -1,3 +1,6 @@
+import theMovieDb from './../vendor/js/themoviedb'
+
+
 class Api {
 	constructor () {
 		this.db = theMovieDb;

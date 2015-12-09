@@ -1,6 +1,8 @@
+import router from './../vendor/js/routie'
+
 class Router {
     constructor (Controller) {
-        this.router = routie;
+        this.router = router;
         this.Controller = Controller;
         this.listen()
     }
@@ -13,7 +15,12 @@ class Router {
             },
 
             'movie-list': () => {
-                this.Controller.loadTemplate('movieList')
+
+                this.Controller.getMovies()
+                    .then((resp) => {
+                        this.Controller.loadTemplate('movieList',resp)
+                    })
+
             },
 
             'menu-item': () => {
