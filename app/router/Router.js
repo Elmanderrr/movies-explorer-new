@@ -14,11 +14,18 @@ class Router {
                 this.Controller.loadTemplate('root')
             },
 
+            'movie-list/:id': (id) => {
+                this.Controller.getMovieById(id)
+                    .then(resp => {
+                        this.Controller.loadTemplate('movie', resp)
+                    })
+            },
+
             'movie-list': () => {
 
                 this.Controller.getMovies()
                     .then((resp) => {
-                        this.Controller.loadTemplate('movieList',resp)
+                        this.Controller.loadTemplate('movieList',{list:resp})
                     })
 
             },

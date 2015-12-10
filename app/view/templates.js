@@ -4,6 +4,9 @@ let templates = {
         movieList:{
             url:`${_basedir}/movie-list.html`
         },
+        movie:{
+          url:`${_basedir}/movie-item.html`
+        },
         menuItem:{
             url:`${_basedir}/menu-item.html`
         },

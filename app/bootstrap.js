@@ -1,7 +1,10 @@
+import _ from 'underscore'
 import Router from './router/Router'
 import Controller from './controllers/Controller'
 import View from './view/View'
+import Ext from './controllers/movieListController'
 
+_.extend(Controller.prototype,Ext)
 
 class App {
     constructor () {
