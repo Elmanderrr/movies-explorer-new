@@ -1,19 +1,15 @@
 <div class="container"><div class="section"><div class="row">
+
     {{#list}}
-    <div class="col l4 m6 ">
-        <div class="card medium">
+    <div class="col l4 m6 s12 movie-list-holder pointer" data-id="{{id}}">
+        <div class="card medium hoverable">
             <div class="card-image">
+                <div class="movie-mark">{{vote_average}}/10</div>
                 <img src="https://image.tmdb.org/t/p/w396{{backdrop_path}}">
                 <span class="card-title">{{title}}</span>
-            </div>
-            <div class="card-content">
-                <p>{{overview}}</p>
-            </div>
-            <div class="card-action">
-                <button data-id="{{id}}">Ссылка здесь</button>
-                <a href="#movie-list/{{id}}">test</a>
             </div>
         </div>
     </div>
     {{/list}}
+
 </div></div></div>

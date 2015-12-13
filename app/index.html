@@ -9,17 +9,37 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="vendor/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/movie-item.css">
+    <link rel="stylesheet" href="css/movie-list.css">
 </head>
 <body>
 
 <nav class="light-blue light-green" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+
+        <div class="preloader-wrapper small active hidden preloader-element">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+
         <ul class="right hide-on-med-and-down">
-            <li><a href="#">Root</a>
+            <li>
+                <a href="#">Root</a>
             </li>
-            <li><a href="#movie-list">Movie List</a>
+            <li>
+                <a href="#movie-list">Movie List</a>
             </li>
-            <li><a href="#menu-item">menu Item</a>
+            <li>
+                <a href="#menu-item">menu Item</a>
             </li>
         </ul>
 

@@ -1,0 +1,38 @@
+
+.movie-list-holder .card-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: inherit;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 20px;
+}
+
+.movie-list-holder .movie-mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    font-size: 30px;
+    padding:0 3px;
+    color: #fff;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+}
+
+.movie-list-holder .card.medium {
+    height: auto;
+}
+
+.movie-list-holder .card .card-image .card-title {
+    line-height: 1;
+}
+
+.movie-list-holder .card .card-image .card-title {
+    background: rgba(0,0,0,0.4);
+    display: block;
+    width: 100%;
+}
+

@@ -23,7 +23,7 @@ class Router {
 
             'movie-list': () => {
 
-                this.Controller.getMovies()
+                this.Controller.getMovies(5)
                     .then((resp) => {
                         this.Controller.loadTemplate('movieList',{list:resp})
                     })

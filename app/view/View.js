@@ -27,7 +27,7 @@ class View {
         var selector = props.selector;
         var callback = props.callback;
 
-        this.$root.on(evt,selector,callback)
+        this.$root.on(evt,selector,callback);
 
         return this
     }

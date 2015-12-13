@@ -7,7 +7,7 @@ import helpers from './../helpers/helpers'
 
 _.extend(Controller.prototype, {
 
-    getMovies(page=5) {
+    getMovies(page) {
 
         let promises = _.map(helpers.generateArray(page), (n)=> {
 
@@ -27,8 +27,27 @@ _.extend(Controller.prototype, {
     },
 
 
+    /**
+     * I remove unnecessary actors from list and leave only five of them for showing.
+     * And set key last = true to the last item in the set
+     * @param movies
+     * @returns {Array}
+     */
+    filterActors (movies = []) {
+        const itemsToShow = 5;
+
+        movies.credits.cast = _.filter(movies.credits.cast, (actor, i) => {
+            actor.last = (i === itemsToShow - 1) ;
+
+            return i < itemsToShow
+        });
+
+        return movies
+    },
+
     getMovieById (id) {
         return Api.getMovieById(id)
+                .then(this.filterActors)
     }
 
 });

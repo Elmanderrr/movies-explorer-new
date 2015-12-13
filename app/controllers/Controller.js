@@ -1,7 +1,7 @@
 import Api from './../api/themoviedbApi'
 import _ from 'underscore'
 import helpers from './../helpers/helpers'
-
+import Router from './../router/Router'
 
 
 class Controller {
@@ -33,9 +33,10 @@ class Controller {
             })
             .handler({
                 evt:'click',
-                selector:'p',
-                callback:() => {
-                    console.log(this)
+                selector:'.movie-list-holder',
+                callback:function (el) {
+                    let id = $(this).data('id');
+                    routie(`movie-list/${id}`);
                 }
             })
     }
@@ -51,7 +52,8 @@ class Controller {
         this.View.renderTemplate(tpl,data)
 
     }
-    
+
+
 }
 
 export default Controller

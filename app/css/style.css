@@ -6,9 +6,28 @@
  * Made By MaterializeCSS.com
  */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+.inactive:hover {
+    background: none;
+}
+
+.nav-wrapper .preloader-wrapper {
+    position: absolute;
+    left: 63%;
+    top: 14px;
 }

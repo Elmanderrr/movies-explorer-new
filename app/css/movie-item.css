@@ -1,0 +1,36 @@
+.actor:hover img {
+    opacity: 1;
+    height: auto;
+}
+
+.actor img {
+    height: 0;
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    opacity: 0;
+    -webkit-transition: opacity .2s ease;
+    -moz-transition: opacity .2s ease;
+    -ms-transition: opacity .2s ease;
+    -o-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+
+.actor .name:hover {
+    text-decoration: none;
+}
+
+.movie .mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    font-size: 40px;
+    padding:0 10px;
+    color: #fff;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+}

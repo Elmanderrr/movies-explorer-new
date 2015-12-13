@@ -1,66 +1,47 @@
-<div class="container"><div class="section"><div class="row">
+<div class="container"><div class="section"><div class="row movie">
 
-    <div class="col s12 m7">
-        <div class="card">
-            <div class="card-image">
-                <img  src="https://image.tmdb.org/t/p/w396{{backdrop_path}}">
-                <span class="card-title">{{title}}</span>
-            </div>
-            <div class="card-content">
-                <p>{{overview}}</p>
-                <p><b>Жанр:</b>
-                    {{#genres}}
-                        {{name}} &nbsp;
-                    {{/genres}}</p>
-                <p>
-                <p>
-                <b>Актеры:</b>
-
-                    {{#credits.cast}}
-                        <div>
-                            {{name}} &nbsp;
-                            <!--<img width="50px" src="https://image.tmdb.org/t/p/w396{{profile_path }}">-->
-                        </div>
-
-                    {{/credits.cast}}</p>
-                <p>
-                <p><b>картинки:</b>
-                    {{#images.posters}}
-                        <img  src="https://image.tmdb.org/t/p/w396{{file_path}}">
-                    {{/images.posters}}</p>
-                <p>
-                    <b>Продолжительность:</b> {{runtime}} минут
-                </p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
+    <div class="col l5 m12">
+        <div class="pos-rlt center-block">
+            <img class="responsive-img " src="https://image.tmdb.org/t/p/w396{{backdrop_path}}">
+            <div class="mark">{{vote_average}}/10</div>
         </div>
     </div>
+    <div class="col l7">
+        <div class="center">
+            <h3 class="left-align">
+                {{title}}
+            </h3>
+        </div>
+        <p class="m-b-xs">
+            <b>Продолжительность:</b>
+            {{runtime}} минут
+        </p>
+        <p class="m-b-xs">
+            <b>Дата выхода:</b>
+            {{release_date}}
+        </p>
+        <p class="m-b-xs">
+            <b>Жанр:</b>
+            {{#genres}}
+                {{name}}&nbsp;
+            {{/genres}}</p>
+        <p class="m-b-xs">
+        <p class="m-b-xs">
+            <b>Описание:</b>
+            {{overview}}
+        </p>
+        <p>
+            <b>Актеры:</b>
+
+            {{#credits.cast}}
+            <span class="actor pos-rlt inline" data-id="{{id}}">
+                <img src="https://image.tmdb.org/t/p/w396{{profile_path}}">
+                <span class="text-u-l pointer name  ">{{name}}</span>{{^last}}, {{/last}}
+            </span>
+            {{/credits.cast}}
+
+        </p>
+    </div>
+
 </div></div></div>
 
-<!--: false-->
-<!--backdrop_path: "/kvXLZqY0Ngl1XSw7EaMQO0C1CCj.jpg"-->
-<!--belongs_to_collection: null-->
-<!--budget: 130000000-->
-<!--genres: [{id: 878, name: "фантастика"}, {id: 28, name: "боевик"}, {id: 12, name: "приключения"}]-->
-<!--homepage: ""-->
-<!--id: 102899-->
-<!--imdb_id: "tt0478970"-->
-<!--original_language: "en"-->
-<!--original_title: "Ant-Man"-->
-<!--overview: "Вооружившись удивительной способностью уменьшаться в размере, но обладать при этом большой силой, мошенник Скотт Лэнг должен стать героем и помочь своему наставнику, доктору Хэнку Пиму, сохранить в тайне существование костюма Человека-муравья от угроз нового поколения."-->
-<!--popularity: 54.597091-->
-<!--poster_path: "/r4zPrHRtJd3eBH7sPQn9ypp1Gvk.jpg"-->
-<!--production_companies: [{name: "Marvel Studios", id: 420}]-->
-<!--production_countries: [{iso_3166_1: "US", name: "United States of America"}]-->
-<!--release_date: "2015-07-17"-->
-<!--revenue: 518178306-->
-<!--runtime: 117-->
-<!--spoken_languages: [{iso_639_1: "en", name: "English"}]-->
-<!--status: "Released"-->
-<!--tagline: "Рожденный ползать взлетит до небес"-->
-<!--title: "Человек-муравей"-->
-<!--video: false-->
-<!--vote_average: 6.9-->
-<!--vote_count: 1881-->

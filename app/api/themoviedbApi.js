@@ -36,7 +36,7 @@ class Api {
 
     }
 
-    getMovies (page) {
+    getMovies (page=5) {
         return this.get('movies','getPopular',{page:page,language:'ru'})
     }
 
